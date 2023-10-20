@@ -15,12 +15,25 @@
 
 
 }
-.canvas {
+.cobra{
     position: absolute;
     left: 10%;
     bottom: 10%;
     height: 30px;
     width: 10px;
     background-color: black;
+    animation:  movimentoCobra 5s infinite linear;
 
+}
+
+@keyframes movimentoCobra {
+    from{
+        bottom: 10%;
+
+    }
+    to{
+        bottom: 90%;
+    }
+    
+    
 }
