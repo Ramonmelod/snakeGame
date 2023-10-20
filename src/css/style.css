@@ -22,11 +22,14 @@
     height: 30px;
     width: 10px;
     background-color: black;
-    animation:  movimentoCobra 5s infinite linear;
+   
+    
 
 }
 
-@keyframes movimentoCobra {
+
+
+@keyframes movimentoCobraV {
     from{
         bottom: 10%;
 
@@ -36,4 +39,25 @@
     }
     
     
+}
+@keyframes movimentoCobraH {
+    from{
+        left: 10%;
+
+    }
+    to{
+        left: 90%;
+    }
+    
+    
+}
+
+.movimentoCobraVertical{
+    animation:  movimentoCobraV 5s infinite linear;
+
+}
+
+.movimentoCobraHorizontal{
+    animation:  movimentoCobraH 5s infinite linear;
+
 }
