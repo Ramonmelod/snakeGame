@@ -3,21 +3,25 @@ const cobra = document.querySelector('.cobra');
 let posicaoV =18;
 let posicaoH =18;
 let idIntervalHDireita;
-let idIntervalVCima;
+let idIntervalVCima;                     
 let idIntervalHEsquerda;
 let idIntervalVBaixo;
+let controleSetaCima = true;
+let controleSetaBaixo = true;
+let controleSetaDireita = true;
+let controleSetaEsquerda = true;
 
 function contarSegundosVCima(){
     
     posicaoV ++;
     cobra.style.bottom = posicaoV*3 +'px';
-    
+    controleSetaCima = false;
 }
 
 function contarSegundosVBaixo(){
     posicaoV --;
     cobra.style.bottom = posicaoV*3 +'px';
-    
+    controleSetaBaixo = false;
 }
 
 
@@ -25,18 +29,22 @@ function contarSegundosHDireita(){
     
     posicaoH ++;
     cobra.style.left = posicaoH*3 +'px';
-    
+    controleSetaDireita = false;
 }
 function contarSegundosHEsquerda(){
     
     posicaoH --;
     cobra.style.left = posicaoH*3 +'px';
-    
+    controleSetaEsquerda = false;
 }
 
 setInterval(document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp') {
+    if (event.key === 'ArrowUp'&& controleSetaCima ==true) {
+        
 
+        controleSetaBaixo = true;
+        controleSetaDireita = true;
+        controleSetaEsquerda = true;
         clearInterval(idIntervalVBaixo);
         clearInterval(idIntervalHDireita);
         clearInterval(idIntervalHEsquerda);
@@ -44,8 +52,11 @@ setInterval(document.addEventListener('keydown', (event) => {
         
         idIntervalVCima = setInterval(contarSegundosVCima, 100);
             
-    } else if (event.key === 'ArrowRight') {
-
+    } else if (event.key === 'ArrowRight' && controleSetaDireita ==true) {
+        
+        controleSetaCima = true;
+        controleSetaBaixo = true;
+        controleSetaEsquerda = true;
         clearInterval(idIntervalVCima);
         clearInterval(idIntervalVBaixo);
         clearInterval(idIntervalHEsquerda);
@@ -53,8 +64,11 @@ setInterval(document.addEventListener('keydown', (event) => {
         idIntervalHDireita = setInterval(contarSegundosHDireita,100);
         
         
-    } else if (event.key === 'ArrowDown') {
-
+    } else if (event.key === 'ArrowDown' && controleSetaBaixo ==true) {
+        
+        controleSetaCima = true;
+        controleSetaDireita = true;
+        controleSetaEsquerda = true;
         clearInterval(idIntervalVCima);
         clearInterval(idIntervalHDireita);
         clearInterval(idIntervalHEsquerda);
@@ -62,8 +76,11 @@ setInterval(document.addEventListener('keydown', (event) => {
         idIntervalVBaixo = setInterval(contarSegundosVBaixo,100);
         
         
-    } else if (event.key === 'ArrowLeft') {
-
+    } else if (event.key === 'ArrowLeft' && controleSetaEsquerda ==true) {
+        
+        controleSetaCima = true;
+        controleSetaBaixo = true;
+        controleSetaDireita = true;
         clearInterval(idIntervalVCima);
         clearInterval(idIntervalHDireita);
         clearInterval(idIntervalVBaixo);
@@ -74,6 +91,8 @@ setInterval(document.addEventListener('keydown', (event) => {
     }}
     
 ),100);
+
+
 
 
 
