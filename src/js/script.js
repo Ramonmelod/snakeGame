@@ -39,10 +39,8 @@ function contarSegundosHEsquerda(){
 }
 
 setInterval(document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp'&& controleSetaCima ==true) {
+    if (event.key === 'ArrowUp'&& controleSetaCima ==true && controleSetaBaixo ==true) {
         
-
-        controleSetaBaixo = true;
         controleSetaDireita = true;
         controleSetaEsquerda = true;
         clearInterval(idIntervalVBaixo);
@@ -52,11 +50,10 @@ setInterval(document.addEventListener('keydown', (event) => {
         
         idIntervalVCima = setInterval(contarSegundosVCima, 100);
             
-    } else if (event.key === 'ArrowRight' && controleSetaDireita ==true) {
+    } else if (event.key === 'ArrowRight' && controleSetaDireita ==true && controleSetaEsquerda ==true) {
         
         controleSetaCima = true;
         controleSetaBaixo = true;
-        controleSetaEsquerda = true;
         clearInterval(idIntervalVCima);
         clearInterval(idIntervalVBaixo);
         clearInterval(idIntervalHEsquerda);
@@ -64,9 +61,8 @@ setInterval(document.addEventListener('keydown', (event) => {
         idIntervalHDireita = setInterval(contarSegundosHDireita,100);
         
         
-    } else if (event.key === 'ArrowDown' && controleSetaBaixo ==true) {
+    } else if (event.key === 'ArrowDown' && controleSetaBaixo ==true && controleSetaCima ==true) {
         
-        controleSetaCima = true;
         controleSetaDireita = true;
         controleSetaEsquerda = true;
         clearInterval(idIntervalVCima);
@@ -76,11 +72,9 @@ setInterval(document.addEventListener('keydown', (event) => {
         idIntervalVBaixo = setInterval(contarSegundosVBaixo,100);
         
         
-    } else if (event.key === 'ArrowLeft' && controleSetaEsquerda ==true) {
-        
+    } else if (event.key === 'ArrowLeft' && controleSetaEsquerda ==true && controleSetaDireita ==true) { 
         controleSetaCima = true;
         controleSetaBaixo = true;
-        controleSetaDireita = true;
         clearInterval(idIntervalVCima);
         clearInterval(idIntervalHDireita);
         clearInterval(idIntervalVBaixo);
