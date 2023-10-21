@@ -1,24 +1,48 @@
 const cobra = document.querySelector('.cobra');
 
+let posicaoV =18;
+let posicaoH =18;
+let idIntervalH;
+let idIntervalV;
 
-const movimentoVertical = ()=>{cobra.classList.add('movimentoCobraVertical');}
+function contarSegundosVCima(){
+    
+    posicaoV ++;
+    cobra.style.bottom = posicaoV*3 +'px';
+    
+}
 
-const movimentoHorizontal = ()=>{ cobra.classList.add('movimentoCobraHorizontal');}
+
+function contarSegundosHDireita(){
+    
+    posicaoH ++;
+    cobra.style.left = posicaoH*3 +'px';
+    
+}
 
 
-document.addEventListener('keydown', (event) => {
+
+setInterval(document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowUp') {
 
+        clearInterval(idIntervalH);
         cobra.style.transform = 'rotate(0deg)';                //rotaciona a cobrinha para zero graus
-        cobra.classList.remove('movimentoCobraHorizontal');
-        movimentoVertical();
+        
+        idIntervalV = setInterval(contarSegundosVCima, 100);
+            
+            
+        
        
     } else if (event.key === 'ArrowRight') {
 
+        clearInterval(idIntervalV);
         cobra.style.transform = 'rotate(90deg)';               //rotaciona a cobrinha para noventa graus
-        cobra.classList.remove('movimentoCobraVertical');
-        movimentoHorizontal();
+        idIntervalH = setInterval(contarSegundosHDireita,100);}
+        
         
     }
     
-});
+),1);
+
+
+

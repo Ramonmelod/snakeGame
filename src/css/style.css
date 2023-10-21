@@ -29,7 +29,7 @@
 
 
 
-@keyframes movimentoCobraV {
+/*@keyframes movimentoCobraV {
     from{
         bottom: 10%;
 
@@ -50,7 +50,7 @@
     }
     
     
-}
+}*/
 
 .movimentoCobraVertical{
     animation:  movimentoCobraV 5s infinite linear;
