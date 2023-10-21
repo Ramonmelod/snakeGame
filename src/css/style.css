@@ -27,31 +27,6 @@
 
 }
 
-
-
-/*@keyframes movimentoCobraV {
-    from{
-        bottom: 10%;
-
-    }
-    to{
-        bottom: 90%;
-    }
-    
-    
-}
-@keyframes movimentoCobraH {
-    from{
-        left: 10%;
-
-    }
-    to{
-        left: 90%;
-    }
-    
-    
-}*/
-
 .movimentoCobraVertical{
     animation:  movimentoCobraV 5s infinite linear;
 
